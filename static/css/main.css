@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    height: 100%;
+    /* background-color: #121212; */
+}
+
+h1 {
+    font-size: 4.2em;
+    font-family: 'Licorice', cursive;
+    margin-bottom: 0.2em;
+}
+
+.content {
+    margin: 0 auto;
+    width: 65%;
+    color: white;
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+    background-color: #627D98;
+    color: #F0F4F8;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+    font-size: 1.2em;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+form {
+    margin-top: 20px;
+    height: 35px;
+}
+
+#content {
+    width: 70%;
+}
+
+.custom-button {
+    color: #F0F4F8;
+}
+
+
+.date-created-column {
+    width: 200px;
+}
+
+.resources-column {
+    width: 200px;
+}
+
+.youtube-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+.submission-button {
+    background-color: #028FA3;
+    color: white;
+    padding: 5px #F0F4F8;
+    font-size: 0.9em;
+}

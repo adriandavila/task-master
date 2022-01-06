@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Licorice&display=swap" rel="stylesheet">
+<title>Task Master</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Task Master</h1>
+
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Resources</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td class="date-created-column">{{ task.date_created.date() }}</td>
+                <td class="resources-column">
+                    <a href="{{ task.videoUrl }}" class="custom-button yt-text">YouTube</a>
+                    <br>
+                    <a href="{{ task.videoUrl }}"><img href="{{ task.videoUrl }}" src="{{ task.video_thumbnail }}" alt="Youtube video link for {{ task.content }}" class="youtube-thumbnail"></a>
+                </td>
+                <td style="width: 100px;">
+                    <a href="/delete/{{task.id}}" class="custom-button">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}" class="custom-button">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task" class="submission-button">
+    </form>
+</div>
+{% endblock %}
